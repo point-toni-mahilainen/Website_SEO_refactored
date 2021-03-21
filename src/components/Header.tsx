@@ -1,10 +1,24 @@
 import React from "react";
+import { Grid } from "@material-ui/core";
+
+import logo from "../img/seologo-3.png";
+import Navigation from "./Navigation";
+import Logo from "./Logo";
+import Facebook from "./Facebook";
 
 const Header = () => {
   return (
-    <div>
-      <h2>Header</h2>
-    </div>
+    <Grid
+      container
+      flexDirection="column"
+      alignItems="center"
+      justifyContent="space-around"
+      style={{ height: "120px", backgroundColor: "#2829A7" }}
+    >
+      <Logo />
+      <Navigation />
+      <Facebook />
+    </Grid>
   );
 };
 

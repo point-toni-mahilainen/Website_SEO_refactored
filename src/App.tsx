@@ -8,8 +8,11 @@ import Contact from "views/Contact";
 import Mainpage from "views/Mainpage";
 import Palikkala from "views/Palikkala";
 import ServiceStation from "views/Service_station";
+import { Grid } from "@material-ui/core";
+import { createUseStyles } from "react-jss";
+import Background from "img/back.jpg";
 
-enum Routes {
+export enum Routes {
   Main = "/",
   Company = "/yritys",
   CafeRestaurant = "/kahvila_ravintola",
@@ -18,30 +21,41 @@ enum Routes {
   Contact = "/palaute",
 }
 
+const useStyles = createUseStyles({
+  container: {
+    height: "calc(100vh - 120px)",
+    backgroundImage: `url(${Background})`,
+    backgroundSize: "cover",
+  },
+});
+
 const App = () => {
+  const classes = useStyles();
   return (
     <Router>
       <Header />
-      <Switch>
-        <Route path={Routes.Company}>
-          <Company />
-        </Route>
-        <Route path={Routes.CafeRestaurant}>
-          <CafeRestaurant />
-        </Route>
-        <Route path={Routes.ServiceStation}>
-          <ServiceStation />
-        </Route>
-        <Route path={Routes.Palikkala}>
-          <Palikkala />
-        </Route>
-        <Route path={Routes.Contact}>
-          <Contact />
-        </Route>
-        <Route path={Routes.Main}>
-          <Mainpage />
-        </Route>
-      </Switch>
+      <Grid className={classes.container}>
+        <Switch>
+          <Route path={Routes.Company}>
+            <Company />
+          </Route>
+          <Route path={Routes.CafeRestaurant}>
+            <CafeRestaurant />
+          </Route>
+          <Route path={Routes.ServiceStation}>
+            <ServiceStation />
+          </Route>
+          <Route path={Routes.Palikkala}>
+            <Palikkala />
+          </Route>
+          <Route path={Routes.Contact}>
+            <Contact />
+          </Route>
+          <Route path={Routes.Main}>
+            <Mainpage />
+          </Route>
+        </Switch>
+      </Grid>
       <Footer />
     </Router>
   );
