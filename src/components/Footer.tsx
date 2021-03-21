@@ -1,10 +1,15 @@
+import { Grid } from "@material-ui/core";
 import React from "react";
 
 const Footer = () => {
   return (
-    <div>
+    <Grid
+      container
+      justifyContent="center"
+      style={{ height: "100px", backgroundColor: "#2829A7" }}
+    >
       <h2>Footer</h2>
-    </div>
+    </Grid>
   );
 };
 

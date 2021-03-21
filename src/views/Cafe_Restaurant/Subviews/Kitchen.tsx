@@ -1,7 +1,11 @@
 import React from "react";
 
 const Kitchen = () => {
-  return <div></div>;
+  return (
+    <div>
+      <h2>Kitchen</h2>
+    </div>
+  );
 };
 
 export default Kitchen;
