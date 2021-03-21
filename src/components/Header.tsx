@@ -1,16 +1,18 @@
-import { Grid } from "@material-ui/core";
 import React from "react";
+import { Grid } from "@material-ui/core";
+import logo from "../img/seologo-3.png";
 import Navigation from "./Navigation";
+import Logo from "./Logo";
 
 const Header = () => {
   return (
     <Grid
       container
       flexDirection="column"
-      alignContent="center"
+      alignItems="center"
       style={{ height: "100px", backgroundColor: "#2829A7" }}
     >
-      <h2 style={{ margin: 0, textAlign: "center" }}>Header</h2>
+      <Logo />
       <Navigation />
     </Grid>
   );

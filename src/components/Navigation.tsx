@@ -6,8 +6,17 @@ import { useHistory, useLocation } from "react-router";
 const CustomTab = withStyles({
   root: {
     color: "white",
+    "&$selected": {
+      color: "white",
+    },
   },
-})(Tab);
+  selected: {},
+})((props: StyledTabProps) => <Tab disableRipple {...props} />);
+
+interface StyledTabProps {
+  label: string;
+  value?: string;
+}
 
 const Navigation = () => {
   const location = useLocation();
