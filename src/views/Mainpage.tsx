@@ -12,7 +12,7 @@ const Mainpage = () => {
 
   return (
     <Grid className={classes.container}>
-      <h2 style={{ margin: 0 }}>Mainpage</h2>
+      <h2>Mainpage</h2>
     </Grid>
   );
 };
