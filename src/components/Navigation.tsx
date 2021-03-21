@@ -3,9 +3,31 @@ import { Routes } from "App";
 import React from "react";
 import { useHistory, useLocation } from "react-router";
 
+interface StyledTabsProps {
+  value: string;
+  onChange: (event: React.ChangeEvent<{}>, newValue: string) => void;
+}
+
+const CustomTabs = withStyles({
+  root: {
+    height: 30,
+    minHeight: 30,
+  },
+  fixed: {
+    height: 30,
+  },
+  indicator: {
+    backgroundColor: "white",
+  },
+})(Tabs);
+
 const CustomTab = withStyles({
   root: {
+    height: 30,
+    minHeight: 30,
     color: "white",
+    fontWeight: "bold",
+    padding: "0 10px",
     "&$selected": {
       color: "white",
     },
@@ -27,7 +49,7 @@ const Navigation = () => {
   };
 
   return (
-    <Tabs value={location.pathname} onChange={handleChange}>
+    <CustomTabs value={location.pathname} onChange={handleChange}>
       <CustomTab label={"Etusivu"} value={Routes.Main}></CustomTab>
       <CustomTab label={"Yritys"} value={Routes.Company}></CustomTab>
       <CustomTab
@@ -37,7 +59,7 @@ const Navigation = () => {
       <CustomTab label={"Huoltamo"} value={Routes.ServiceStation}></CustomTab>
       <CustomTab label={"SEO Palikkala"} value={Routes.Palikkala}></CustomTab>
       <CustomTab label={"Palaute"} value={Routes.Contact}></CustomTab>
-    </Tabs>
+    </CustomTabs>
   );
 };
 

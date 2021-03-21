@@ -1,8 +1,10 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
+
 import logo from "../img/seologo-3.png";
 import Navigation from "./Navigation";
 import Logo from "./Logo";
+import Facebook from "./Facebook";
 
 const Header = () => {
   return (
@@ -10,10 +12,12 @@ const Header = () => {
       container
       flexDirection="column"
       alignItems="center"
-      style={{ height: "100px", backgroundColor: "#2829A7" }}
+      justifyContent="space-around"
+      style={{ height: "120px", backgroundColor: "#2829A7" }}
     >
       <Logo />
       <Navigation />
+      <Facebook />
     </Grid>
   );
 };

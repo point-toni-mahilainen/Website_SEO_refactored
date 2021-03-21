@@ -9,6 +9,8 @@ import Mainpage from "views/Mainpage";
 import Palikkala from "views/Palikkala";
 import ServiceStation from "views/Service_station";
 import { Grid } from "@material-ui/core";
+import { createUseStyles } from "react-jss";
+import Background from "img/back.jpg";
 
 export enum Routes {
   Main = "/",
@@ -19,11 +21,20 @@ export enum Routes {
   Contact = "/palaute",
 }
 
+const useStyles = createUseStyles({
+  container: {
+    height: "calc(100vh - 120px)",
+    backgroundImage: `url(${Background})`,
+    backgroundSize: "cover",
+  },
+});
+
 const App = () => {
+  const classes = useStyles();
   return (
     <Router>
       <Header />
-      <Grid style={{ height: "calc(100vh - 100px)" }}>
+      <Grid className={classes.container}>
         <Switch>
           <Route path={Routes.Company}>
             <Company />
