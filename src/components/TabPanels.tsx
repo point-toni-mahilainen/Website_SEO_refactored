@@ -47,10 +47,10 @@ const TabPanels = (props: Props) => {
       return (
         <>
           <TabPanel value={value} index={0}>
-            <MaintenanceServices />
+            <SpareParts />
           </TabPanel>
           <TabPanel value={value} index={1}>
-            <SpareParts />
+            <MaintenanceServices />
           </TabPanel>
           <TabPanel value={value} index={2}>
             <CarWash />
