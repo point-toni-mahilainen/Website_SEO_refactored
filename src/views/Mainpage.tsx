@@ -23,7 +23,7 @@ const useStyles = createUseStyles({
     color: "#ffffff",
     padding: "15px",
     textAlign: "center",
-    backgroundColor: "#2829A7",
+    backgroundColor: "rgba(5, 6, 154, .8)",
     borderRadius: "10px 0 0 10px",
   },
 });
