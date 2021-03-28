@@ -23,7 +23,7 @@ export enum Routes {
 
 const useStyles = createUseStyles({
   container: {
-    height: "calc(100vh - 600px)",
+    height: "calc(100vh - 120px)",
     backgroundImage: `url(${Background})`,
     backgroundSize: "cover",
   },

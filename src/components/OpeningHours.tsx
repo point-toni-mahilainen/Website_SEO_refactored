@@ -1,17 +1,30 @@
 import { Grid } from "@material-ui/core";
-import React from "react";
+import { createUseStyles } from "react-jss";
 import FooterHeader from "./FooterHeader";
 
+const useStyles = createUseStyles({
+  list: {
+    lineHeight: "25px",
+  },
+});
+
 const SeoKoski = () => {
+  const classes = useStyles();
   return (
     <>
-      <h5>SEO Koski</h5>
-      <ul>
-        <li>Maanantai - Perjantai</li>
+      <h4>SEO Koski</h4>
+      <ul className={classes.list}>
+        <li>
+          <b>Maanantai - Perjantai</b>
+        </li>
         <li>06.00 - 19.00</li>
-        <li>Lauantai</li>
+        <li>
+          <b>Lauantai</b>
+        </li>
         <li>08.00 - 16.00</li>
-        <li>Sunnuntai</li>
+        <li>
+          <b>Sunnuntai</b>
+        </li>
         <li>09.00 - 16.00</li>
       </ul>
     </>
@@ -19,11 +32,14 @@ const SeoKoski = () => {
 };
 
 const SeoPalikkala = () => {
+  const classes = useStyles();
   return (
     <>
-      <h5>SEO Palikkala</h5>
-      <ul>
-        <li>Maanantai - Perjantai</li>
+      <h4>SEO Palikkala</h4>
+      <ul className={classes.list}>
+        <li>
+          <b>Maanantai - Perjantai</b>
+        </li>
         <li>07.30 - 16.00</li>
       </ul>
     </>

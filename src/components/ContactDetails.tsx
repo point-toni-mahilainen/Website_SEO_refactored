@@ -1,11 +1,10 @@
-import React from "react";
 import FooterHeader from "./FooterHeader";
 
 const ContactDetails = () => {
   return (
     <>
       <FooterHeader title="Yhteystiedot" />
-      <address>
+      <address style={{ lineHeight: "27px", fontStyle: "normal" }}>
         Kosken Autohuolto Oy <br />
         Hämeentie 2 <br />
         31500, Koski TL <br />

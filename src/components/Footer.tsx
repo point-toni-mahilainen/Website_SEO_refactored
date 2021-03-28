@@ -1,9 +1,13 @@
 import { Grid } from "@material-ui/core";
+
 import ContactDetails from "./ContactDetails";
 import FooterHeader from "./FooterHeader";
+import GoogleMaps from "./GoogleMaps";
 import OpeningHours from "./OpeningHours";
 
 const Footer = () => {
+  const { REACT_APP_GOOGLE_API_KEY } = process.env;
+
   return (
     <Grid
       container
@@ -11,7 +15,7 @@ const Footer = () => {
       style={{
         height: "fit-content",
         backgroundColor: "#2829A7",
-        padding: "10px 0",
+        padding: "15px 0",
       }}
     >
       <Grid
@@ -35,12 +39,23 @@ const Footer = () => {
         >
           <OpeningHours />
         </Grid>
-        <Grid item xs={4}>
+        <Grid
+          container
+          item
+          xs={4}
+          alignContent="center"
+          flexDirection="column"
+        >
           <FooterHeader title="Sijainti" />
-          <iframe
-            title="Kosken autohuolto Oy:n toimipaikat kartalla"
-            src="https://www.google.com/maps/d/u/0/embed?mid=1apQ8Ch6OQ0LNuxhRXjcUYb8NiMZplyak&ll=60.755132,23.320535&z=9"
-          ></iframe>
+          <GoogleMaps
+            isMarkerShown
+            googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${REACT_APP_GOOGLE_API_KEY}`}
+            loadingElement={<div style={{ height: "180px", width: "400px" }} />}
+            containerElement={
+              <div style={{ height: "180px", width: "400px" }} />
+            }
+            mapElement={<div style={{ height: "180px", width: "400px" }} />}
+          />
         </Grid>
       </Grid>
     </Grid>

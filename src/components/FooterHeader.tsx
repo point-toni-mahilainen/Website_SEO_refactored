@@ -3,7 +3,7 @@ interface Props {
 }
 
 const FooterHeader = (props: Props) => (
-  <h2 style={{ marginBottom: 10 }}>{props.title}</h2>
+  <h2 style={{ marginBottom: 15 }}>{props.title}</h2>
 );
 
 export default FooterHeader;
