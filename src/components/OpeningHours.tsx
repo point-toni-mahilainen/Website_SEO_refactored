@@ -2,6 +2,10 @@ import { Grid } from "@material-ui/core";
 import { createUseStyles } from "react-jss";
 import FooterHeader from "./FooterHeader";
 
+interface Props {
+  flexDirection: "row" | "column";
+}
+
 const useStyles = createUseStyles({
   list: {
     lineHeight: "25px",
@@ -46,15 +50,16 @@ const SeoPalikkala = () => {
   );
 };
 
-const OpeningHours = () => {
+const OpeningHours = (props: Props) => {
+  const { flexDirection } = props;
   return (
     <>
       <FooterHeader title="Aukioloajat" />
-      <Grid container item>
-        <Grid item xs={6}>
+      <Grid container item flexDirection={flexDirection}>
+        <Grid item xs={flexDirection === "row" ? 6 : 12}>
           <SeoKoski />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={flexDirection === "row" ? 6 : 12}>
           <SeoPalikkala />
         </Grid>
       </Grid>

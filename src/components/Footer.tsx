@@ -37,7 +37,7 @@ const Footer = () => {
             borderLeft: "1px solid white",
           }}
         >
-          <OpeningHours />
+          <OpeningHours flexDirection="row" />
         </Grid>
         <Grid
           container
