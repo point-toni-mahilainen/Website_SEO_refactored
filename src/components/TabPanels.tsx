@@ -21,7 +21,9 @@ const TabPanel = (props: Props) => {
   const { children, value, index } = props;
 
   return (
-    <Grid hidden={value !== index}>{value === index && <>{children}</>}</Grid>
+    <Grid hidden={value !== index} style={{ height: "100%" }}>
+      {value === index && <>{children}</>}
+    </Grid>
   );
 };
 

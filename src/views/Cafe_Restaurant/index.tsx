@@ -36,6 +36,7 @@ const CafeRestaurant = () => {
         container
         justifyContent="center"
         style={{
+          height: "50px",
           backgroundColor: "rgba(5, 6, 154, .8)",
           borderTop: "2px solid #ffffff",
         }}
@@ -46,9 +47,7 @@ const CafeRestaurant = () => {
           <CustomTab label={tabNames[2]} value={2}></CustomTab>
         </Tabs>
       </Grid>
-      <Grid>
-        <TabPanels value={value} view="CafeRestaurant" />
-      </Grid>
+      <TabPanels value={value} view="CafeRestaurant" />
     </>
   );
 };
