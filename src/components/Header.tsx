@@ -1,7 +1,5 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
-
-import logo from "../img/seologo-3.png";
 import Navigation from "./Navigation";
 import Logo from "./Logo";
 import Facebook from "./Facebook";
