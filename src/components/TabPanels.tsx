@@ -37,10 +37,10 @@ const TabPanels = (props: Props) => {
             <Cafeteria />
           </TabPanel>
           <TabPanel value={value} index={1}>
-            <Kitchen />
+            <LunchKoski />
           </TabPanel>
           <TabPanel value={value} index={2}>
-            <LunchKoski />
+            <Kitchen />
           </TabPanel>
         </>
       );

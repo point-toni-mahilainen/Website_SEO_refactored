@@ -21,8 +21,6 @@ const useStyles = createUseStyles({
   },
   right: {
     marginTop: "50px",
-  },
-  rightTop: {
     display: "flex",
     padding: "20px",
     flexDirection: "column",
@@ -31,12 +29,12 @@ const useStyles = createUseStyles({
     borderRadius: "10px",
     justifyContent: "center",
   },
-  rightTop2: {
+  rightTop: {
     display: "flex",
     flexDirection: "column",
   },
   imageTest: {
-    padding: "100px",
+    padding: "9%",
     border: "1px solid white",
   },
 });
@@ -61,39 +59,42 @@ const Cafeteria = () => {
         </Grid>
       </Grid>
       <Grid item xs={9}>
-        <Grid item xs={12} className={classes.right}>
-          <Grid item xs={8} className={classes.rightTop}>
-            <Grid item xs={10} className={classes.rightTop2}>
-              <h3>Meiltä aamulla leivotut tuoreet leivonnaiset joka päivä!</h3>
-              <h3 style={{ margin: "20px 0 20px auto" }}>
-                Myymme leivonnaisia mukaan sekä myös tilauksesta!
-              </h3>
-              <hr style={{ width: "100%" }} />
-            </Grid>
-            <Grid
-              container
-              item
-              xs={12}
-              justifyContent="space-between"
-              style={{ paddingTop: "20px" }}
-            >
-              <Grid className={classes.imageTest}></Grid>
-              <Grid className={classes.imageTest}></Grid>
-              <Grid className={classes.imageTest}></Grid>
-              <Grid className={classes.imageTest}></Grid>
-            </Grid>
-            <Grid
-              container
-              item
-              xs={12}
-              justifyContent="space-between"
-              style={{ paddingTop: "20px" }}
-            >
-              <Grid className={classes.imageTest}></Grid>
-              <Grid className={classes.imageTest}></Grid>
-              <Grid className={classes.imageTest}></Grid>
-              <Grid className={classes.imageTest}></Grid>
-            </Grid>
+        <Grid item xs={9} className={classes.right}>
+          <Grid item className={classes.rightTop}>
+            <h3 style={{ margin: "0 0 20px 0" }}>
+              Meiltä aamulla leivotut tuoreet leivonnaiset joka päivä!
+            </h3>
+            <hr style={{ width: "50%", margin: "0 0 0 35%" }} />
+            <h3 style={{ margin: "20px 0 20px auto" }}>
+              Myymme leivonnaisia mukaan sekä myös tilauksesta!
+            </h3>
+            <hr style={{ width: "100%", margin: 0 }} />
+          </Grid>
+          <Grid
+            container
+            item
+            xs={12}
+            justifyContent="space-between"
+            style={{ paddingTop: "20px" }}
+          >
+            <Grid className={classes.imageTest}></Grid>
+            <Grid className={classes.imageTest}></Grid>
+            <Grid className={classes.imageTest}></Grid>
+            <Grid className={classes.imageTest}></Grid>
+            <Grid className={classes.imageTest}></Grid>
+          </Grid>
+          <Grid
+            container
+            item
+            xs={12}
+            justifyContent="space-between"
+            style={{ paddingTop: "20px" }}
+          >
+            <Grid className={classes.imageTest}></Grid>
+            <Grid className={classes.imageTest}></Grid>
+            <Grid className={classes.imageTest}></Grid>
+            <Grid className={classes.imageTest}></Grid>
+            <Grid className={classes.imageTest}></Grid>
           </Grid>
         </Grid>
       </Grid>
