@@ -1,5 +1,4 @@
 import { Grid } from "@material-ui/core";
-
 import ContactDetails from "./ContactDetails";
 import FooterHeader from "./FooterHeader";
 import GoogleMaps from "./GoogleMaps";

@@ -21,7 +21,13 @@ const TabPanel = (props: Props) => {
   const { children, value, index } = props;
 
   return (
-    <Grid hidden={value !== index}>{value === index && <>{children}</>}</Grid>
+    <Grid
+      item
+      hidden={value !== index}
+      style={{ minHeight: "calc(100vh - 170px)", padding: "12.875em 0" }}
+    >
+      {value === index && <>{children}</>}
+    </Grid>
   );
 };
 
@@ -35,10 +41,10 @@ const TabPanels = (props: Props) => {
             <Cafeteria />
           </TabPanel>
           <TabPanel value={value} index={1}>
-            <Kitchen />
+            <LunchKoski />
           </TabPanel>
           <TabPanel value={value} index={2}>
-            <LunchKoski />
+            <Kitchen />
           </TabPanel>
         </>
       );
@@ -47,10 +53,10 @@ const TabPanels = (props: Props) => {
       return (
         <>
           <TabPanel value={value} index={0}>
-            <MaintenanceServices />
+            <SpareParts />
           </TabPanel>
           <TabPanel value={value} index={1}>
-            <SpareParts />
+            <MaintenanceServices />
           </TabPanel>
           <TabPanel value={value} index={2}>
             <CarWash />
