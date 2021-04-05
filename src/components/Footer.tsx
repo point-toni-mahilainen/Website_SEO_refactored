@@ -6,7 +6,7 @@ import OpeningHours from "./OpeningHours";
 
 const Footer = () => {
   const { REACT_APP_GOOGLE_API_KEY } = process.env;
-  console.log(REACT_APP_GOOGLE_API_KEY);
+
   return (
     <Grid
       container

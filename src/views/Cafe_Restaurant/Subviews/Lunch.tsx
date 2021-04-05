@@ -8,7 +8,7 @@ const useStyles = createUseStyles({
   },
   wrapper: {
     margin: "15px 0",
-    padding: "0 20px",
+    padding: "20px",
     borderRight: "1px solid #2829A7",
     borderLeft: "1px solid #2829A7",
   },
@@ -27,7 +27,6 @@ const useStyles = createUseStyles({
 
 const Lunch = () => {
   const { REACT_APP_FACEBOOK_APP_ID } = process.env;
-  console.log(REACT_APP_FACEBOOK_APP_ID);
 
   const classes = useStyles();
 

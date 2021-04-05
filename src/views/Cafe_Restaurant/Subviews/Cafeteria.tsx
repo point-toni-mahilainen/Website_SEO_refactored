@@ -7,19 +7,18 @@ const useStyles = createUseStyles({
   },
   wrapper: {
     margin: "15px 0",
-    padding: "0 20px",
+    padding: "20px",
     borderRight: "1px solid #2829A7",
     borderLeft: "1px solid #2829A7",
   },
   listContainer: {
     flexDirection: "column",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
   },
   nested: {
     paddingLeft: "10px",
   },
   right: {
-    margin: "1em 0",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
