@@ -13,21 +13,28 @@ const useStyles = createUseStyles({
   },
   partSection: {
     marginBottom: 20,
-    paddingBottom: 20,
-    borderBottom: "1px solid #2829A7",
   },
-  partSectionHeader: {
+  images: {
     margin: "2em 0",
+    justifyContent: "space-around",
+    alignContent: "center",
+  },
+  contentHeader: {
+    margin: "0 20%",
     justifyContent: "center",
     alignContent: "center",
-    borderRight: "1px solid #2829A7",
+    borderBottom: "1px solid #2829A7",
   },
-  partSectionContent: {
-    paddingLeft: "3em",
+  content: {
+    flexDirection: "row",
   },
-  partSectionList: {
-    flexDirection: "column",
+  contentList: {
+    flexDirection: "row",
     justifyContent: "space-around",
+    alignContent: "space-around",
+    "& h5": {
+      margin: "0 10px",
+    },
   },
   imageTest: {
     height: 150,
@@ -43,30 +50,30 @@ const SpareParts = () => {
     <Grid container className={classes.whiteWrapper} justifyContent="center">
       <Grid container item xs={9} className={classes.wrapper}>
         <Grid container item xs={12} className={classes.partSection}>
-          <Grid container item xs={3} className={classes.partSectionHeader}>
-            <h3>Varaosat</h3>
+          <Grid container item xs={4} className={classes.images}>
+            <Grid className={classes.imageTest}></Grid>
+            <Grid className={classes.imageTest}></Grid>
           </Grid>
-          <Grid container item xs={9}>
-            <Grid container item xs={7} justifyContent="space-evenly">
-              <Grid className={classes.imageTest}></Grid>
-              <Grid className={classes.imageTest}></Grid>
+          <Grid container item xs={8} className={classes.content}>
+            <Grid container item xs={12} className={classes.contentHeader}>
+              <h3>Varaosat</h3>
             </Grid>
-            <Grid container item xs={5} className={classes.partSectionList}>
+            <Grid container item xs={12} className={classes.contentList}>
               <h5>Ajoneuvoon</h5>
               <h5>Pienkoneeseen</h5>
             </Grid>
           </Grid>
         </Grid>
         <Grid container item xs={12} className={classes.partSection}>
-          <Grid container item xs={3} className={classes.partSectionHeader}>
-            <h3>Renkaat</h3>
+          <Grid container item xs={4} className={classes.images}>
+            <Grid className={classes.imageTest}></Grid>
+            <Grid className={classes.imageTest}></Grid>
           </Grid>
-          <Grid container item xs={9}>
-            <Grid container item xs={7} justifyContent="space-evenly">
-              <Grid className={classes.imageTest}></Grid>
-              <Grid className={classes.imageTest}></Grid>
+          <Grid container item xs={8} className={classes.content}>
+            <Grid container item xs={12} className={classes.contentHeader}>
+              <h3>Renkaat</h3>
             </Grid>
-            <Grid container item xs={5} className={classes.partSectionList}>
+            <Grid container item xs={12} className={classes.contentList}>
               <h5>Henkilöauto</h5>
               <h5>Pakettiauto</h5>
               <h5>Maasturi</h5>
@@ -75,15 +82,15 @@ const SpareParts = () => {
           </Grid>
         </Grid>
         <Grid container item xs={12} className={classes.partSection}>
-          <Grid container item xs={3} className={classes.partSectionHeader}>
-            <h3>Nestekaasut</h3>
+          <Grid container item xs={4} className={classes.images}>
+            <Grid className={classes.imageTest}></Grid>
+            <Grid className={classes.imageTest}></Grid>
           </Grid>
-          <Grid container item xs={9}>
-            <Grid container item xs={7} justifyContent="space-evenly">
-              <Grid className={classes.imageTest}></Grid>
-              <Grid className={classes.imageTest}></Grid>
+          <Grid container item xs={8} className={classes.content}>
+            <Grid container item xs={12} className={classes.contentHeader}>
+              <h3>Nestekaasut</h3>
             </Grid>
-            <Grid container item xs={5} className={classes.partSectionList}>
+            <Grid container item xs={12} className={classes.contentList}>
               <h5>Grilliin</h5>
               <h5>Trukkiin</h5>
               <h5>Asuntoautoon</h5>
@@ -91,16 +98,16 @@ const SpareParts = () => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid container item xs={12}>
-          <Grid container item xs={3} className={classes.partSectionHeader}>
-            <h3>Lämmitysöljyt</h3>
+        <Grid container item xs={12} className={classes.partSection}>
+          <Grid container item xs={4} className={classes.images}>
+            <Grid className={classes.imageTest}></Grid>
+            <Grid className={classes.imageTest}></Grid>
           </Grid>
-          <Grid container item xs={9}>
-            <Grid container item xs={7} justifyContent="space-evenly">
-              <Grid className={classes.imageTest}></Grid>
-              <Grid className={classes.imageTest}></Grid>
+          <Grid container item xs={8} className={classes.content}>
+            <Grid container item xs={12} className={classes.contentHeader}>
+              <h3>Lämmitysöljyt</h3>
             </Grid>
-            <Grid container item xs={5} className={classes.partSectionList}>
+            <Grid container item xs={12} className={classes.contentList}>
               <h5>Lisätietoja: Pekka 0400 - 826169</h5>
             </Grid>
           </Grid>
