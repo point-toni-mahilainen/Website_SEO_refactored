@@ -1,12 +1,8 @@
 import { Grid } from "@material-ui/core";
-import React, {
-  BaseSyntheticEvent,
-  ChangeEvent,
-  SyntheticEvent,
-  useState,
-} from "react";
+import React, { ChangeEvent, FormEvent, useState } from "react";
 import { createUseStyles } from "react-jss";
 import axios, { AxiosRequestConfig } from "axios";
+import nodemailer from "nodemailer";
 
 const useStyles = createUseStyles({
   whiteWrapper: {
@@ -47,9 +43,30 @@ const Contact = () => {
 
   const classes = useStyles();
 
-  const handleSubmit = (event: Event) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    contactToBackend();
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "tomima87@gmail.com",
+        pass: "6V@:qd7u6'*TC=W!zKcJtq!RDR6#3!:e",
+      },
+    });
+
+    const mailOptions = {
+      from: "tomima87@gmail.com",
+      to: "toni.mahilainen@profitsoftware.com",
+      subject: "Sending Email using Node.js",
+      text: "That was easy!",
+    };
+    // contactToBackend();
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log(`Email sent: ${info.response}`);
+      }
+    });
   };
 
   const handleChangeInput = (
@@ -137,7 +154,7 @@ const Contact = () => {
             </p>
           </Grid>
           <Grid item xs={12} className={classes.bottom}>
-            <form onSubmit={() => handleSubmit}>
+            <form onSubmit={handleSubmit}>
               <Grid container item xs={12} className={classes.formTop}>
                 <Grid item xs={6}>
                   Nimi
