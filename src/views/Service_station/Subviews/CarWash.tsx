@@ -13,6 +13,7 @@ const useStyles = createUseStyles({
   },
   servicesSection: {
     marginBottom: 20,
+    borderBottom: "1px solid #2829A7",
   },
   images: {
     margin: "2em 0",
@@ -20,18 +21,14 @@ const useStyles = createUseStyles({
     alignContent: "center",
   },
   contentHeader: {
-    margin: "0 20%",
-    justifyContent: "center",
     alignContent: "center",
-    borderBottom: "1px solid #2829A7",
   },
   content: {
+    padding: "0 0 0 50px",
     flexDirection: "row",
   },
   contentList: {
     flexDirection: "row",
-    justifyContent: "space-around",
-    alignContent: "space-around",
     "& h5": {
       margin: "0 10px",
     },
@@ -42,15 +39,12 @@ const useStyles = createUseStyles({
   },
   contentListLeft: {
     flexDirection: "row",
-    justifyContent: "space-around",
-    alignContent: "space-around",
     "& h5": {
       margin: "0 10px",
     },
   },
   contentListRight: {
     flexDirection: "column",
-    justifyContent: "space-around",
     "& h6": {
       marginLeft: "10px",
     },
@@ -78,18 +72,20 @@ const CarWash = () => {
               <h3>Yleistä</h3>
             </Grid>
             <Grid container item xs={12} className={classes.common}>
-              <Grid container item xs={3} className={classes.contentListRight}>
+              <Grid container item xs={5} className={classes.contentListRight}>
+                <ul>
+                  <h5>Esipesu korkeapaineella</h5>
+                  <h5>Kaksikomponenttinen kuumavahaus</h5>
+                  <h5>10 harjallista pesuohjelmaa</h5>
+                  <h5>Pesupassilla joka kuudes (6.) peruspesu ilmainen</h5>
+                  <h5>Kysy omaa passia kassalta!</h5>
+                </ul>
                 <h5>Ajoneuvon maksimi koko</h5>
-                <h6>Korkeus: 2.7 m</h6>
-                <h6>Leveys: 2.24 m</h6>
-                <h6>Pituus: 5.5 m</h6>
-              </Grid>
-              <Grid container item xs={9} className={classes.contentListLeft}>
-                <h5>Esipesu korkeapaineella</h5>
-                <h5>Kaksikomponenttinen kuumavahaus</h5>
-                <h5>10 harjallista pesuohjelmaa</h5>
-                <h5>Pesupassilla joka kuudes (6.) peruspesu ilmainen</h5>
-                <h5>Kysy omaa passia kassalta!</h5>
+                <ul>
+                  <h6>Korkeus: 2.7 m</h6>
+                  <h6>Leveys: 2.24 m</h6>
+                  <h6>Pituus: 5.5 m</h6>
+                </ul>
               </Grid>
             </Grid>
           </Grid>
@@ -104,10 +100,12 @@ const CarWash = () => {
               <h3>Pesuohjelmat</h3>
             </Grid>
             <Grid container item xs={12} className={classes.contentList}>
-              <h5>Perus</h5>
-              <h5>Super</h5>
-              <h5>Hyper</h5>
-              <h5>Ekstra</h5>
+              <ul>
+                <h5>Perus</h5>
+                <h5>Super</h5>
+                <h5>Hyper</h5>
+                <h5>Ekstra</h5>
+              </ul>
             </Grid>
           </Grid>
         </Grid>

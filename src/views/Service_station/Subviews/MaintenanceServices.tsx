@@ -13,6 +13,7 @@ const useStyles = createUseStyles({
   },
   servicesSection: {
     marginBottom: 20,
+    borderBottom: "1px solid #2829A7",
   },
   images: {
     margin: "2em 0",
@@ -20,18 +21,14 @@ const useStyles = createUseStyles({
     alignContent: "center",
   },
   contentHeader: {
-    margin: "0 20%",
-    justifyContent: "center",
     alignContent: "center",
-    borderBottom: "1px solid #2829A7",
   },
   content: {
+    padding: "0 0 0 50px",
     flexDirection: "row",
   },
   contentList: {
     flexDirection: "row",
-    justifyContent: "space-around",
-    alignContent: "space-around",
     "& h5": {
       margin: "0 10px",
     },
@@ -59,6 +56,7 @@ const MaintenanceServices = () => {
               <h3>Palvelut</h3>
             </Grid>
             <Grid container item xs={12} className={classes.contentList}>
+              <ul>
               <h5>Määräaikaishuollot</h5>
               <h5>Öljynvaihdot</h5>
               <h5>Renkaanvaihdot</h5>
@@ -66,6 +64,7 @@ const MaintenanceServices = () => {
               <h5>Katsastuspalvelu</h5>
               <h5>Nelipyöräsuuntaukset</h5>
               <h5>Ilmastointihuollot</h5>
+              </ul>
             </Grid>
           </Grid>
         </Grid>
@@ -79,12 +78,14 @@ const MaintenanceServices = () => {
               <h3>Testit</h3>
             </Grid>
             <Grid container item xs={12} className={classes.contentList}>
+            <ul>
               <h5>Jarrut</h5>
               <h5>Iskarit</h5>
               <h5>Pakokaasut</h5>
               <h5>OBD</h5>
               <h5>Vikakoodit</h5>
               <h5>Valot</h5>
+            </ul>
             </Grid>
           </Grid>
         </Grid>

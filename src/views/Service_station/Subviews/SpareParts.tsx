@@ -13,6 +13,7 @@ const useStyles = createUseStyles({
   },
   partSection: {
     marginBottom: 20,
+    borderBottom: "1px solid #2829A7",
   },
   images: {
     margin: "2em 0",
@@ -20,18 +21,14 @@ const useStyles = createUseStyles({
     alignContent: "center",
   },
   contentHeader: {
-    margin: "0 20%",
-    justifyContent: "center",
     alignContent: "center",
-    borderBottom: "1px solid #2829A7",
   },
   content: {
+    padding: "0 0 0 50px",
     flexDirection: "row",
   },
   contentList: {
     flexDirection: "row",
-    justifyContent: "space-around",
-    alignContent: "space-around",
     "& h5": {
       margin: "0 10px",
     },
@@ -59,8 +56,10 @@ const SpareParts = () => {
               <h3>Varaosat</h3>
             </Grid>
             <Grid container item xs={12} className={classes.contentList}>
-              <h5>Ajoneuvoon</h5>
-              <h5>Pienkoneeseen</h5>
+              <ul>
+                <h5>Ajoneuvoon</h5>
+                <h5>Pienkoneeseen</h5>
+              </ul>
             </Grid>
           </Grid>
         </Grid>
@@ -74,10 +73,12 @@ const SpareParts = () => {
               <h3>Renkaat</h3>
             </Grid>
             <Grid container item xs={12} className={classes.contentList}>
-              <h5>Henkilöauto</h5>
-              <h5>Pakettiauto</h5>
-              <h5>Maasturi</h5>
-              <h5>Jotkin maatalouskoneet yms. Kysy lisätietoja!</h5>
+              <ul>
+                <h5>Henkilöauto</h5>
+                <h5>Pakettiauto</h5>
+                <h5>Maasturi</h5>
+                <h5>Jotkin maatalouskoneet yms. Kysy lisätietoja!</h5>
+              </ul>
             </Grid>
           </Grid>
         </Grid>
@@ -91,10 +92,12 @@ const SpareParts = () => {
               <h3>Nestekaasut</h3>
             </Grid>
             <Grid container item xs={12} className={classes.contentList}>
-              <h5>Grilliin</h5>
-              <h5>Trukkiin</h5>
-              <h5>Asuntoautoon</h5>
-              <h5>Veneeseen</h5>
+              <ul>
+                <h5>Grilliin</h5>
+                <h5>Trukkiin</h5>
+                <h5>Asuntoautoon</h5>
+                <h5>Veneeseen</h5>
+              </ul>
             </Grid>
           </Grid>
         </Grid>
