@@ -7,7 +7,7 @@ const useStyles = createUseStyles({
   },
   wrapper: {
     margin: "15px 0",
-    padding: "20px",
+    padding: "0 20px 20px 20px",
     borderRight: "1px solid #2829A7",
     borderLeft: "1px solid #2829A7",
   },
@@ -31,14 +31,20 @@ const useStyles = createUseStyles({
     padding: "9%",
     border: "1px solid black",
   },
+  header: {
+    width: "100%",
+    padding: "0 0 30px 0",
+  },
 });
 
 const Cafeteria = () => {
   const classes = useStyles();
-
   return (
     <Grid container className={classes.whiteWrapper} justifyContent="center">
       <Grid container item xs={9} className={classes.wrapper}>
+        <Grid className={classes.header}>
+          <h2>Kahvila</h2>
+        </Grid>
         <Grid container item xs={2} justifyContent="center">
           <Grid container item className={classes.listContainer}>
             <h3>Kahvilatuotteet:</h3>

@@ -1,5 +1,4 @@
 import { Grid } from "@material-ui/core";
-import React from "react";
 import { createUseStyles } from "react-jss";
 
 const useStyles = createUseStyles({
@@ -42,46 +41,10 @@ const useStyles = createUseStyles({
 
 const SpareParts = () => {
   const classes = useStyles();
-
   return (
     <Grid container className={classes.whiteWrapper} justifyContent="center">
       <Grid container item xs={9} className={classes.wrapper}>
-        <Grid container item xs={12} className={classes.partSection}>
-          <Grid container item xs={4} className={classes.images}>
-            <Grid className={classes.imageTest}></Grid>
-            <Grid className={classes.imageTest}></Grid>
-          </Grid>
-          <Grid container item xs={8} className={classes.content}>
-            <Grid container item xs={12} className={classes.contentHeader}>
-              <h3>Varaosat</h3>
-            </Grid>
-            <Grid container item xs={12} className={classes.contentList}>
-              <ul>
-                <h5>Ajoneuvoon</h5>
-                <h5>Pienkoneeseen</h5>
-              </ul>
-            </Grid>
-          </Grid>
-        </Grid>
-        <Grid container item xs={12} className={classes.partSection}>
-          <Grid container item xs={4} className={classes.images}>
-            <Grid className={classes.imageTest}></Grid>
-            <Grid className={classes.imageTest}></Grid>
-          </Grid>
-          <Grid container item xs={8} className={classes.content}>
-            <Grid container item xs={12} className={classes.contentHeader}>
-              <h3>Renkaat</h3>
-            </Grid>
-            <Grid container item xs={12} className={classes.contentList}>
-              <ul>
-                <h5>Henkilöauto</h5>
-                <h5>Pakettiauto</h5>
-                <h5>Maasturi</h5>
-                <h5>Jotkin maatalouskoneet yms. Kysy lisätietoja!</h5>
-              </ul>
-            </Grid>
-          </Grid>
-        </Grid>
+        <h2>Kaasut ja öljyt</h2>
         <Grid container item xs={12} className={classes.partSection}>
           <Grid container item xs={4} className={classes.images}>
             <Grid className={classes.imageTest}></Grid>

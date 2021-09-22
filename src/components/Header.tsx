@@ -8,10 +8,10 @@ const Header = () => {
   return (
     <Grid
       container
-      flexDirection="column"
+      flexDirection="row"
       alignItems="center"
       justifyContent="space-around"
-      style={{ height: "120px", backgroundColor: "#2829A7" }}
+      style={{ height: "70px", backgroundColor: "#2829A7" }}
     >
       <Logo />
       <Navigation />

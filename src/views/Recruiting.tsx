@@ -2,6 +2,7 @@ import { Grid } from "@material-ui/core";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { createUseStyles } from "react-jss";
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
+import TopImage from "components/TopImage";
 
 const useStyles = createUseStyles({
   whiteWrapper: {
@@ -27,6 +28,9 @@ const useStyles = createUseStyles({
   },
   formBottom: {
     padding: "16px 0",
+  },
+  story: {
+    margin: "15px 0",
   },
   top: {},
   bottom: {},
@@ -102,7 +106,6 @@ const Contact = () => {
 
     axios(config)
       .then((response: AxiosResponse) => {
-        console.log(response.data);
         alert(response.data);
       })
       .catch((err) => {
@@ -111,7 +114,7 @@ const Contact = () => {
   };
 
   return (
-    <Grid style={{ minHeight: "100%", padding: "16em 0" }}>
+    <Grid style={{ minHeight: "100%" }}>
       <Grid
         container
         item
@@ -119,7 +122,49 @@ const Contact = () => {
         className={classes.whiteWrapper}
         justifyContent="center"
       >
+        <TopImage page="Recruiting" />
         <Grid container item xs={6} className={classes.wrapper}>
+          <Grid item xs={12} className={classes.story}>
+            <h2>Meidän tarina</h2>
+            <p>
+              Asemiemme tarkoituksena on tarjota perinteistä sekä
+              kokonaisvaltaista huoltoasemapalvelua alueen asukkaille sekä,
+              satunnaiskävijöille.
+              <br />
+              <br />
+              Kosken Autohuolto Oy on vuonna 1995 perustettu perheyritys. Pekka
+              Kanasuo ja Kai Lepistö ostivat huoltoaseman Kosken keskustasta.
+              Huoltamotoiminnan lisäksi kysyntää oli myös kahvilalle, joten pian
+              alkoi myös kahvion suunnittelu ja rakennus. Laajennuksen
+              valmistuttua kahvion ovet avattiin vuonna 1998. Samalla yritys sai
+              uuden yrittäjän Aila Lepistön. Myöhemmin toimintaa laajennettiin
+              vielä rakentamalla autojen pikapesula. Kosken Autohuolto Oy eli
+              tuttavallisemmin Kosken SEO työllistää tällä hetkellä, yrittäjien
+              itsensä lisäksi, kuusi vakituista ja useamman osa-aikaisen
+              työntekijän.
+              <br />
+              <br />
+              Kosken SEO ja nykyisin myös Palikkakan SEO sijaitsevat
+              ihanteellisilla paikoilla Kosken asukkaiden sekä ohikulkevien
+              asiakkaiden kannalta. Asemamme tarjoavat asiakkailleen suuren
+              valikoiman erilaisia tuotteita ja palveluja arjen tarpeisiin.
+              Olemme kilpailukykyisiä suurten liikenneasemien rinnalla,
+              erityisesti asiantunteva ja avulias henkilökunta sekä hyvä palvelu
+              yhdistettynä perinteiseen huoltoasematunnelmaan ovat
+              vahvuuksiamme. Laadukkaan huoltamotoiminnan lisäksi kahvioistamme
+              saa joka päivä tuoreita leivonnaisia, joita on myös mahdollista
+              tilata erilaisiin tilaisuuksiin. Keittiöissämme teemme päivittäin
+              runsaan valikoiman erilaisia ruokia, pieneen tai suureen nälkään.
+              Arkisin tarjolla on tottakai myös perinteistä kotiruokaa
+              noutopöytälounaan muodossa.
+              <br />
+              <br />
+              Ystävällisin terveisin,
+              <br />
+              <br />
+              Aila, Pekka, Kai
+            </p>
+          </Grid>
           <Grid item xs={12} className={classes.top}>
             <p>
               Kerro meille mielipiteesi tai kysy! <br />

@@ -1,5 +1,4 @@
 import { Grid } from "@material-ui/core";
-import React from "react";
 import { createUseStyles } from "react-jss";
 
 const useStyles = createUseStyles({
@@ -8,7 +7,7 @@ const useStyles = createUseStyles({
   },
   wrapper: {
     margin: "15px 0",
-    padding: "20px",
+    padding: "0 20px 20px 20px",
     borderRight: "1px solid #2829A7",
     borderLeft: "1px solid #2829A7",
   },
@@ -23,16 +22,21 @@ const useStyles = createUseStyles({
     padding: "9%",
     border: "1px solid black",
   },
+  header: {
+    width: "100%",
+    padding: "0 0 30px 0",
+  },
 });
 
 const Lunch = () => {
   const { REACT_APP_FACEBOOK_APP_ID } = process.env;
-
   const classes = useStyles();
-
   return (
     <Grid container className={classes.whiteWrapper} justifyContent="center">
       <Grid container item xs={9} className={classes.wrapper}>
+        <Grid className={classes.header}>
+          <h2>Lounas</h2>
+        </Grid>
         <Grid container item className={classes.lunch}>
           <iframe
             src={`https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fkoskenseo&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=${REACT_APP_FACEBOOK_APP_ID}`}

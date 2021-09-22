@@ -5,7 +5,7 @@ const Facebook = () => {
     <a
       href="https://www.facebook.com/koskenseo/"
       target="blank"
-      style={{ position: "absolute", top: 0, right: 0, margin: "1em" }}
+      style={{ position: "absolute", right: 0, marginRight: "1em" }}
     >
       <FacebookIcon style={{ color: "white", width: "2em", height: "2em" }} />
     </a>

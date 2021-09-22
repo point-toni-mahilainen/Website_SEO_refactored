@@ -49,15 +49,11 @@ const Navigation = () => {
   return (
     <CustomTabs value={location.pathname} onChange={handleChange}>
       <CustomTab label={"Etusivu"} value={Routes.Main}></CustomTab>
-      <CustomTab label={"Yritys"} value={Routes.Company}></CustomTab>
-      <CustomTab
-        label={"Kahvila / Ravintola"}
-        value={Routes.CafeRestaurant}
-        style={{ width: "200px" }}
-      ></CustomTab>
-      <CustomTab label={"Huoltamo"} value={Routes.ServiceStation}></CustomTab>
+      <CustomTab label={"Kahvila"} value={Routes.Cafeteria}></CustomTab>
+      <CustomTab label={"Autohuolto"} value={Routes.CarService}></CustomTab>
       <CustomTab label={"SEO Palikkala"} value={Routes.Palikkala}></CustomTab>
-      <CustomTab label={"Palaute"} value={Routes.Contact}></CustomTab>
+      <CustomTab label={"Rekry"} value={Routes.Recruiting}></CustomTab>
+      <CustomTab label={"Yhteystiedot"} value={Routes.ContactInfo}></CustomTab>
     </CustomTabs>
   );
 };
