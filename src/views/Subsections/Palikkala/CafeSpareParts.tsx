@@ -8,4 +8,4 @@ const CafeSpareParts = () => {
   );
 };
 
-export default CafeSpareParts;
+export default React.memo(CafeSpareParts);

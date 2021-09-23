@@ -1,4 +1,5 @@
 import { Grid } from "@material-ui/core";
+import React from "react";
 import { createUseStyles } from "react-jss";
 
 const useStyles = createUseStyles({
@@ -83,4 +84,4 @@ const SpareParts = () => {
   );
 };
 
-export default SpareParts;
+export default React.memo(SpareParts);

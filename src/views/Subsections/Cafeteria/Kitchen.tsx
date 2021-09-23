@@ -1,4 +1,5 @@
 import { Grid } from "@material-ui/core";
+import React from "react";
 import { createUseStyles } from "react-jss";
 
 const useStyles = createUseStyles({
@@ -92,4 +93,4 @@ const Kitchen = () => {
   );
 };
 
-export default Kitchen;
+export default React.memo(Kitchen);

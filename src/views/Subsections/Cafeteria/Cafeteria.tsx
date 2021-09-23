@@ -1,4 +1,5 @@
 import { Grid } from "@material-ui/core";
+import React from "react";
 import { createUseStyles } from "react-jss";
 
 const useStyles = createUseStyles({
@@ -104,4 +105,4 @@ const Cafeteria = () => {
   );
 };
 
-export default Cafeteria;
+export default React.memo(Cafeteria);

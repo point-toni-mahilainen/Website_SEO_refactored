@@ -1,5 +1,5 @@
 import { Grid } from "@material-ui/core";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { createUseStyles } from "react-jss";
 import back from "../img/back.jpg";
 
@@ -50,4 +50,4 @@ const TopImage = (props: Props) => {
   );
 };
 
-export default TopImage;
+export default React.memo(TopImage);

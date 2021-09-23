@@ -1,5 +1,6 @@
 import { Grid } from "@material-ui/core";
 import TopImage from "components/TopImage";
+import React from "react";
 
 const Palikkala = () => {
   return (
@@ -22,4 +23,4 @@ const Palikkala = () => {
   );
 };
 
-export default Palikkala;
+export default React.memo(Palikkala);

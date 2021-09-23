@@ -30,4 +30,4 @@ const TabPanels = (props: Props) => {
   }
 };
 
-export default TabPanels;
+export default React.memo(TabPanels);

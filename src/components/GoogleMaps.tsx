@@ -30,4 +30,4 @@ const GoogleMaps = withScriptjs(
   })
 );
 
-export default GoogleMaps;
+export default React.memo(GoogleMaps);

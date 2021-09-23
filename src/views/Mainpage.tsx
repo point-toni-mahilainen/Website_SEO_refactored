@@ -1,6 +1,7 @@
 import { Grid } from "@material-ui/core";
 import ContactDetails from "components/ContactDetails";
 import OpeningHours from "components/OpeningHours";
+import React from "react";
 // import TopImage from "components/TopImage";
 import { createUseStyles } from "react-jss";
 import back from "../img/back_narrow.jpg";
@@ -105,4 +106,4 @@ const Mainpage = () => {
   );
 };
 
-export default Mainpage;
+export default React.memo(Mainpage);

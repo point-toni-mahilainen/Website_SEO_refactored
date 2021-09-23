@@ -131,4 +131,4 @@ const MaintenanceServices = () => {
   );
 };
 
-export default MaintenanceServices;
+export default React.memo(MaintenanceServices);

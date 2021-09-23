@@ -1,4 +1,5 @@
 import { Facebook as FacebookIcon } from "@material-ui/icons";
+import React from "react";
 
 const Facebook = () => {
   return (
@@ -12,4 +13,4 @@ const Facebook = () => {
   );
 };
 
-export default Facebook;
+export default React.memo(Facebook);

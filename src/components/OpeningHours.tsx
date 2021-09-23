@@ -1,4 +1,5 @@
 import { Grid } from "@material-ui/core";
+import React from "react";
 import { createUseStyles } from "react-jss";
 import FooterHeader from "./FooterHeader";
 
@@ -67,4 +68,4 @@ const OpeningHours = (props: Props) => {
   );
 };
 
-export default OpeningHours;
+export default React.memo(OpeningHours);

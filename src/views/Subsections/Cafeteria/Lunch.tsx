@@ -1,4 +1,5 @@
 import { Grid } from "@material-ui/core";
+import React from "react";
 import { createUseStyles } from "react-jss";
 
 const useStyles = createUseStyles({
@@ -90,4 +91,4 @@ const Lunch = () => {
   );
 };
 
-export default Lunch;
+export default React.memo(Lunch);

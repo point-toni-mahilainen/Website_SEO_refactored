@@ -8,4 +8,4 @@ const FuelsGasses = () => {
   );
 };
 
-export default FuelsGasses;
+export default React.memo(FuelsGasses);

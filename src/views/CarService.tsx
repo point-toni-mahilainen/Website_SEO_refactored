@@ -3,6 +3,7 @@ import MaintenanceServices from "./Subsections/Car_service/MaintenanceServices";
 import GassesOils from "./Subsections/Car_service/GassesOils";
 import CarWash from "./Subsections/Car_service/CarWash";
 import TopImage from "components/TopImage";
+import React from "react";
 
 const CarService = () => {
   return (
@@ -15,4 +16,4 @@ const CarService = () => {
   );
 };
 
-export default CarService;
+export default React.memo(CarService);

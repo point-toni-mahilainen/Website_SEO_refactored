@@ -1,3 +1,4 @@
+import React from "react";
 import FooterHeader from "./FooterHeader";
 
 const ContactDetails = () => {
@@ -17,4 +18,4 @@ const ContactDetails = () => {
   );
 };
 
-export default ContactDetails;
+export default React.memo(ContactDetails);

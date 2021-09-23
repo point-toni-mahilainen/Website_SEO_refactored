@@ -10,6 +10,7 @@ import CarService from "views/CarService";
 import { Grid } from "@material-ui/core";
 import { createUseStyles } from "react-jss";
 import Background from "img/back.jpg";
+import React from "react";
 
 export enum Routes {
   Main = "/",
@@ -61,4 +62,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default React.memo(App);

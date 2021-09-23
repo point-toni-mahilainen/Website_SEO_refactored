@@ -114,4 +114,4 @@ const CarWash = () => {
   );
 };
 
-export default CarWash;
+export default React.memo(CarWash);

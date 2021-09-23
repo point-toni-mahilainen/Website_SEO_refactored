@@ -1,4 +1,5 @@
 import { Grid } from "@material-ui/core";
+import React from "react";
 import ContactDetails from "./ContactDetails";
 import FooterHeader from "./FooterHeader";
 import GoogleMaps from "./GoogleMaps";
@@ -61,4 +62,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default React.memo(Footer);

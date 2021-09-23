@@ -36,7 +36,7 @@ const useStyles = createUseStyles({
   bottom: {},
 });
 
-const Contact = () => {
+const Recruiting = () => {
   const [name, setName] = useState<string | undefined>(undefined);
   const [emailAddress, setEmailAddress] = useState<string | undefined>(
     undefined
@@ -230,4 +230,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default React.memo(Recruiting);

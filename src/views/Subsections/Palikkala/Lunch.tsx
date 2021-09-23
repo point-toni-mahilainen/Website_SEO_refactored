@@ -8,4 +8,4 @@ const Lunch = () => {
   );
 };
 
-export default Lunch;
+export default React.memo(Lunch);

@@ -33,4 +33,4 @@ const Company = () => {
   );
 };
 
-export default Company;
+export default React.memo(Company);
