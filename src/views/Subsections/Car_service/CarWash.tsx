@@ -3,18 +3,21 @@ import React from "react";
 import { createUseStyles } from "react-jss";
 
 const useStyles = createUseStyles({
+  stripe: {
+    minWidth: "calc(100% + 20px)",
+    marginTop: "-10px",
+    height: "2px",
+    backgroundColor: "#2829A7",
+  },
   whiteWrapper: {
+    paddingBottom: "40px",
     backgroundColor: "#ffffff",
   },
   wrapper: {
-    minHeight: "100%",
     margin: "15px 0",
-    padding: "20px",
+    padding: "0 20px 20px 20px",
   },
-  carWashSection: {
-    marginBottom: 20,
-    borderBottom: "1px solid #2829A7",
-  },
+  carWashSection: {},
   images: {
     margin: "2em 0",
     justifyContent: "space-around",
@@ -54,6 +57,18 @@ const useStyles = createUseStyles({
     width: 150,
     border: "1px solid black",
   },
+  header: {
+    width: "100%",
+    paddingBottom: "50px",
+    "& h2": {
+      padding: "3px 100px 8px 10px",
+      color: "white",
+      width: "fit-content",
+      backgroundColor: "#2829A7",
+      margin: "-35px 0 0 -20px",
+      boxShadow: "3px 3px 0px 0px #8978FF",
+    },
+  },
 });
 
 const CarWash = () => {
@@ -61,7 +76,10 @@ const CarWash = () => {
   return (
     <Grid container className={classes.whiteWrapper} justifyContent="center">
       <Grid container item xs={9} className={classes.wrapper}>
-        <h2>Autopesu</h2>
+        <Grid className={classes.stripe}></Grid>
+        <Grid className={classes.header}>
+          <h2>Autopesu</h2>
+        </Grid>
         <Grid container item xs={12} className={classes.carWashSection}>
           <Grid container item xs={4} className={classes.images}>
             <Grid className={classes.imageTest}></Grid>

@@ -35,6 +35,9 @@ const TopImage = (props: Props) => {
       case "Recruiting":
         setImageSrc(back);
         break;
+      case "ContactInfo":
+        setImageSrc(back);
+        break;
       default:
     }
   }, [page]);

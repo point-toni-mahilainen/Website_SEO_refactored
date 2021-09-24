@@ -24,7 +24,7 @@ const useStyles = createUseStyles({
   info: {
     padding: "50px 0",
     display: "flex",
-    justifyContent: "center",
+    justifyContent: "space-evenly",
   },
   wrapper: {
     display: "flex",
@@ -36,7 +36,6 @@ const useStyles = createUseStyles({
   content: {
     margin: "20px 0",
     padding: "15px 45px",
-    width: "70%",
     height: "fit-content",
     borderRight: "1px solid #2829A7",
     borderLeft: "1px solid #2829A7",
@@ -81,16 +80,12 @@ const Mainpage = () => {
       {/* <TopImage page="Mainpage" /> */}
       <Grid className={classes.image}></Grid>
       {/* <img src={back} alt="Etusivun kuva" width="100%" height="300px" /> */}
-      <Grid className={classes.wrapper}>
-        <Grid className={classes.content}>
+      <Grid container item xs={12} className={classes.wrapper}>
+        <Grid item xs={8} className={classes.content}>
           <h1>Tervetuloa SEO Kosken kotisivuille</h1>
           <Grid container item xs={12} className={classes.info}>
-            <Grid item xs={5}>
-              <OpeningHours flexDirection="row" />
-            </Grid>
-            <Grid item xs={5}>
-              <ContactDetails />
-            </Grid>
+            <ContactDetails />
+            <OpeningHours flexDirection="row" />
           </Grid>
           <Grid container item xs={12} className={classes.lunchSection}>
             <h2>Kotitekoinen ja perinteinen lounas joka arkipäivä!</h2>
