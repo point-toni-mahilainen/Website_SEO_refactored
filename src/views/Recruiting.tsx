@@ -1,8 +1,19 @@
 import { Grid } from "@material-ui/core";
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import React, {
+  BaseSyntheticEvent,
+  ChangeEvent,
+  ChangeEventHandler,
+  DetailedHTMLProps,
+  FormEvent,
+  InputHTMLAttributes,
+  SyntheticEvent,
+  useEffect,
+  useState,
+} from "react";
 import { createUseStyles } from "react-jss";
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 import TopImage from "components/TopImage";
+import fs from "fs";
 
 const useStyles = createUseStyles({
   whiteWrapper: {
@@ -37,14 +48,16 @@ const useStyles = createUseStyles({
 });
 
 const Recruiting = () => {
+  const classes = useStyles();
   const [name, setName] = useState<string | undefined>(undefined);
   const [emailAddress, setEmailAddress] = useState<string | undefined>(
     undefined
   );
   const [subject, setSubject] = useState<string | undefined>(undefined);
   const [message, setMessage] = useState<string | undefined>(undefined);
-
-  const classes = useStyles();
+  const [attachment, setAttachment] = useState<Array<object> | undefined>(
+    undefined
+  );
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -52,29 +65,45 @@ const Recruiting = () => {
   };
 
   const handleChangeInput = (
-    input: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    event:
+      | ChangeEvent<HTMLInputElement>
+      | ChangeEvent<HTMLTextAreaElement>
+      | SyntheticEvent<HTMLInputElement>
   ) => {
-    const inputField = input.currentTarget.id;
-    const nameValue = input.currentTarget.value;
-    const emailValue = input.currentTarget.value;
-    const subjectValue = input.currentTarget.value;
-    const messageValue = input.currentTarget.value;
+    const inputField = event.currentTarget.id;
 
     switch (inputField) {
       case "name":
+        const nameValue = event.currentTarget.value;
         setName(nameValue);
         break;
 
       case "email":
+        const emailValue = event.currentTarget.value;
         setEmailAddress(emailValue);
         break;
 
       case "subject":
+        const subjectValue = event.currentTarget.value;
         setSubject(subjectValue);
         break;
 
       case "message":
+        const messageValue = event.currentTarget.value;
         setMessage(messageValue);
+        break;
+
+      case "attachment":
+        const { currentTarget } = event as SyntheticEvent<HTMLInputElement>;
+        // tslint:disable-next-line: no-non-null-assertion
+        const attachmentValue = currentTarget.files![0];
+        const stream = fs.createReadStream(attachmentValue.name);
+        setAttachment([
+          {
+            filename: attachmentValue.name,
+            content: stream,
+          },
+        ]);
         break;
 
       default:
@@ -90,6 +119,7 @@ const Recruiting = () => {
       emailAddress,
       subject,
       message,
+      attachment,
     };
 
     const headers = {
@@ -112,6 +142,10 @@ const Recruiting = () => {
         alert("Jokin meni pieleen. Ole hyvä ja yritä uudelleen.");
       });
   };
+
+  useEffect(() => {
+    console.log(attachment);
+  }, [attachment]);
 
   return (
     <Grid style={{ minHeight: "100%" }}>
@@ -205,6 +239,12 @@ const Recruiting = () => {
                     type="text"
                     value={subject}
                     id="subject"
+                    onChange={handleChangeInput}
+                  />
+                  <br />
+                  <input
+                    type="file"
+                    id="attachment"
                     onChange={handleChangeInput}
                   />
                 </Grid>
