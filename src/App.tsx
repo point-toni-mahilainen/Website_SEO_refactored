@@ -24,9 +24,6 @@ export enum Routes {
 const useStyles = createUseStyles({
   container: {
     minHeight: "calc(100vh - 70px)",
-    backgroundImage: `url(${Background})`,
-    backgroundSize: "cover",
-    backgroundAttachment: "fixed",
   },
 });
 
