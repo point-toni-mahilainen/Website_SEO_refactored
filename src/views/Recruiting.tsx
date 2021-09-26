@@ -1,19 +1,8 @@
-import { Grid } from "@material-ui/core";
-import React, {
-  BaseSyntheticEvent,
-  ChangeEvent,
-  ChangeEventHandler,
-  DetailedHTMLProps,
-  FormEvent,
-  InputHTMLAttributes,
-  SyntheticEvent,
-  useEffect,
-  useState,
-} from "react";
-import { createUseStyles } from "react-jss";
+import React, { FormEvent, useRef } from "react";
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
+import { Grid } from "@material-ui/core";
+import { createUseStyles } from "react-jss";
 import TopImage from "components/TopImage";
-import fs from "fs";
 
 const useStyles = createUseStyles({
   whiteWrapper: {
@@ -49,88 +38,31 @@ const useStyles = createUseStyles({
 
 const Recruiting = () => {
   const classes = useStyles();
-  const [name, setName] = useState<string | undefined>(undefined);
-  const [emailAddress, setEmailAddress] = useState<string | undefined>(
-    undefined
-  );
-  const [subject, setSubject] = useState<string | undefined>(undefined);
-  const [message, setMessage] = useState<string | undefined>(undefined);
-  const [attachment, setAttachment] = useState<Array<object> | undefined>(
-    undefined
-  );
+
+  // tslint:disable-next-line: no-null-keyword
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     contactToBackend();
   };
 
-  const handleChangeInput = (
-    event:
-      | ChangeEvent<HTMLInputElement>
-      | ChangeEvent<HTMLTextAreaElement>
-      | SyntheticEvent<HTMLInputElement>
-  ) => {
-    const inputField = event.currentTarget.id;
-
-    switch (inputField) {
-      case "name":
-        const nameValue = event.currentTarget.value;
-        setName(nameValue);
-        break;
-
-      case "email":
-        const emailValue = event.currentTarget.value;
-        setEmailAddress(emailValue);
-        break;
-
-      case "subject":
-        const subjectValue = event.currentTarget.value;
-        setSubject(subjectValue);
-        break;
-
-      case "message":
-        const messageValue = event.currentTarget.value;
-        setMessage(messageValue);
-        break;
-
-      case "attachment":
-        const { currentTarget } = event as SyntheticEvent<HTMLInputElement>;
-        // tslint:disable-next-line: no-non-null-assertion
-        const attachmentValue = currentTarget.files![0];
-        const stream = fs.createReadStream(attachmentValue.name);
-        setAttachment([
-          {
-            filename: attachmentValue.name,
-            content: stream,
-          },
-        ]);
-        break;
-
-      default:
-    }
-  };
-
   const contactToBackend = () => {
     // const url = "https://website-seo-backend.herokuapp.com/sendmail";
     const url = "http://localhost:3001/sendmail";
 
-    const data = {
-      name,
-      emailAddress,
-      subject,
-      message,
-      attachment,
-    };
+    const form = formRef.current;
+    const formData = new FormData(form as HTMLFormElement);
 
     const headers = {
-      Accept: "application/json",
-      ContentType: "application/json",
+      Accept: "multipart/form-data",
+      ContentType: "multipart/form-data",
     };
 
     const config: AxiosRequestConfig = {
       url,
       method: "POST",
-      data,
+      data: formData,
       headers,
     };
 
@@ -142,10 +74,6 @@ const Recruiting = () => {
         alert("Jokin meni pieleen. Ole hyvä ja yritä uudelleen.");
       });
   };
-
-  useEffect(() => {
-    console.log(attachment);
-  }, [attachment]);
 
   return (
     <Grid style={{ minHeight: "100%" }}>
@@ -212,51 +140,27 @@ const Recruiting = () => {
             </p>
           </Grid>
           <Grid item xs={12} className={classes.bottom}>
-            <form onSubmit={handleSubmit}>
+            <form ref={formRef} onSubmit={handleSubmit}>
               <Grid container item xs={12} className={classes.formTop}>
                 <Grid item xs={6}>
                   Nimi
                   <br />
-                  <input
-                    type="text"
-                    value={name}
-                    id="name"
-                    onChange={handleChangeInput}
-                  />
+                  <input type="text" name="name" id="name" />
                   <br />
                   Sähköposti
                   <br />
-                  <input
-                    type="text"
-                    value={emailAddress}
-                    id="email"
-                    onChange={handleChangeInput}
-                  />
+                  <input type="text" name="emailAddress" id="email" />
                   <br />
                   Aihe
                   <br />
-                  <input
-                    type="text"
-                    value={subject}
-                    id="subject"
-                    onChange={handleChangeInput}
-                  />
+                  <input type="text" name="subject" id="subject" />
                   <br />
-                  <input
-                    type="file"
-                    id="attachment"
-                    onChange={handleChangeInput}
-                  />
+                  <input type="file" name="attachment" id="attachment" />
                 </Grid>
                 <Grid item xs={6}>
                   Viesti
                   <br />
-                  <textarea
-                    typeof="text"
-                    value={message}
-                    id="message"
-                    onChange={handleChangeInput}
-                  />
+                  <textarea typeof="text" name="message" id="message" />
                 </Grid>
               </Grid>
               <Grid container item xs={12} className={classes.formBottom}>
