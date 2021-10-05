@@ -54,17 +54,17 @@ const SeoPalikkala = () => {
 const OpeningHours = (props: Props) => {
   const { flexDirection } = props;
   return (
-    <>
+    <Grid style={{ width: "fit-content" }}>
       <FooterHeader title="Aukioloajat" />
-      <Grid container item flexDirection={flexDirection}>
-        <Grid item xs={flexDirection === "row" ? 6 : 12}>
+      <Grid container item flexDirection={flexDirection} spacing={5}>
+        <Grid item xs={6}>
           <SeoKoski />
         </Grid>
-        <Grid item xs={flexDirection === "row" ? 6 : 12}>
+        <Grid item xs={6}>
           <SeoPalikkala />
         </Grid>
       </Grid>
-    </>
+    </Grid>
   );
 };
 

@@ -24,14 +24,14 @@ const Footer = () => {
         xs={10}
         style={{ color: "white", textAlign: "center" }}
       >
-        <Grid item xs={4}>
+        <Grid container item xs={4} justifyContent="center">
           <ContactDetails />
         </Grid>
         <Grid
           container
-          flexDirection="column"
           item
           xs={4}
+          justifyContent="center"
           style={{
             borderRight: "1px solid white",
             borderLeft: "1px solid white",
@@ -49,6 +49,7 @@ const Footer = () => {
           <FooterHeader title="Sijainti" />
           <GoogleMaps
             isMarkerShown
+            defaultZoom={9}
             googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${REACT_APP_GOOGLE_API_KEY}`}
             loadingElement={<div style={{ height: "180px", width: "400px" }} />}
             containerElement={

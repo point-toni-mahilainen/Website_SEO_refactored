@@ -8,13 +8,17 @@ import {
 
 interface Props {
   isMarkerShown: boolean;
+  defaultZoom: number;
 }
 
 const GoogleMaps = withScriptjs(
   withGoogleMap((props: Props) => {
-    const { isMarkerShown } = props;
+    const { isMarkerShown, defaultZoom } = props;
     return (
-      <GoogleMap defaultZoom={9} defaultCenter={{ lat: 60.74, lng: 23.260182 }}>
+      <GoogleMap
+        defaultZoom={defaultZoom}
+        defaultCenter={{ lat: 60.74, lng: 23.260182 }}
+      >
         {isMarkerShown && (
           <>
             <Marker

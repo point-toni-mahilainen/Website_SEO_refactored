@@ -1,16 +1,14 @@
 import { Grid } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import { createUseStyles } from "react-jss";
-import back from "../img/back.jpg";
+import back from "../img/back_narrow.jpg";
 
 const useStyles = createUseStyles({
   container: {
+    backgroundSize: "100%",
+    backgroundRepeat: "no-repeat",
     height: "300px",
-    backgroundColor: "white",
-    borderBottom: "1px solid black",
-    display: "flex",
-    justifyContent: "center",
-    alignContent: "center",
+    width: "100%",
   },
 });
 
@@ -37,16 +35,19 @@ const TopImage = (props: Props) => {
       case "Recruiting":
         setImageSrc(back);
         break;
-
+      case "ContactInfo":
+        setImageSrc(back);
+        break;
       default:
     }
-  }, [imageSrc, page]);
+  }, [page]);
 
   return (
-    <Grid container className={classes.container}>
-      <h1>Kuva tähän</h1>
-      {/* <img src={imageSrc} /> */}
-    </Grid>
+    <Grid
+      container
+      className={classes.container}
+      style={{ backgroundImage: `url(${imageSrc})` }}
+    ></Grid>
   );
 };
 

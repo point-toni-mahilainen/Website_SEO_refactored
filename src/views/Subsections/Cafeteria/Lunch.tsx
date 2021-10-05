@@ -3,14 +3,20 @@ import React from "react";
 import { createUseStyles } from "react-jss";
 
 const useStyles = createUseStyles({
+  stripe: {
+    minWidth: "calc(100% + 20px)",
+    marginTop: "-10px",
+    height: "2px",
+    backgroundColor: "#2829A7",
+  },
   whiteWrapper: {
+    paddingBottom: "40px",
     backgroundColor: "#ffffff",
+    // borderTop: "1px solid #2829A7",
   },
   wrapper: {
     margin: "15px 0",
     padding: "0 20px 20px 20px",
-    borderRight: "1px solid #2829A7",
-    borderLeft: "1px solid #2829A7",
   },
   lunch: {
     width: 360,
@@ -25,7 +31,15 @@ const useStyles = createUseStyles({
   },
   header: {
     width: "100%",
-    padding: "0 0 30px 0",
+    paddingBottom: "50px",
+    "& h2": {
+      padding: "3px 100px 8px 10px",
+      color: "white",
+      width: "fit-content",
+      backgroundColor: "#2829A7",
+      margin: "-35px 0 0 -20px",
+      boxShadow: "3px 3px 0px 0px #8978FF",
+    },
   },
 });
 
@@ -35,6 +49,7 @@ const Lunch = () => {
   return (
     <Grid container className={classes.whiteWrapper} justifyContent="center">
       <Grid container item xs={9} className={classes.wrapper}>
+        <Grid className={classes.stripe}></Grid>
         <Grid className={classes.header}>
           <h2>Lounas</h2>
         </Grid>

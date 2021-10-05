@@ -4,17 +4,16 @@ import { createUseStyles } from "react-jss";
 
 const useStyles = createUseStyles({
   whiteWrapper: {
+    paddingBottom: "40px",
     backgroundColor: "#ffffff",
+    justifyContent: "center",
   },
   wrapper: {
     minHeight: "100%",
     margin: "15px 0",
-    padding: "20px",
+    padding: "0 20px 20px 20px",
   },
-  servicesSection: {
-    marginBottom: 20,
-    borderBottom: "1px solid #2829A7",
-  },
+  servicesSection: {},
   images: {
     margin: "2em 0",
     justifyContent: "space-around",
@@ -38,15 +37,28 @@ const useStyles = createUseStyles({
     width: 150,
     border: "1px solid black",
   },
+  header: {
+    width: "100%",
+    paddingBottom: "50px",
+    "& h2": {
+      padding: "3px 100px 8px 10px",
+      color: "white",
+      width: "fit-content",
+      backgroundColor: "#2829A7",
+      margin: "-35px 0 0 -20px",
+      boxShadow: "3px 3px 0px 0px #8978FF",
+    },
+  },
 });
 
 const MaintenanceServices = () => {
   const classes = useStyles();
-
   return (
-    <Grid container className={classes.whiteWrapper} justifyContent="center">
+    <Grid container className={classes.whiteWrapper}>
       <Grid container item xs={9} className={classes.wrapper}>
-        <h2>Huoltopalvelut</h2>
+        <Grid className={classes.header}>
+          <h2>Huoltopalvelut</h2>
+        </Grid>
         <Grid container item xs={12} className={classes.servicesSection}>
           <Grid container item xs={4} className={classes.images}>
             <Grid className={classes.imageTest}></Grid>

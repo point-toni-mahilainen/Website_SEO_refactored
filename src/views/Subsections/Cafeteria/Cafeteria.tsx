@@ -4,13 +4,12 @@ import { createUseStyles } from "react-jss";
 
 const useStyles = createUseStyles({
   whiteWrapper: {
+    paddingBottom: "40px",
     backgroundColor: "#ffffff",
   },
   wrapper: {
     margin: "15px 0",
     padding: "0 20px 20px 20px",
-    borderRight: "1px solid #2829A7",
-    borderLeft: "1px solid #2829A7",
   },
   listContainer: {
     flexDirection: "column",
@@ -34,7 +33,15 @@ const useStyles = createUseStyles({
   },
   header: {
     width: "100%",
-    padding: "0 0 30px 0",
+    paddingBottom: "50px",
+    "& h2": {
+      padding: "3px 100px 8px 10px",
+      color: "white",
+      width: "fit-content",
+      backgroundColor: "#2829A7",
+      margin: "-35px 0 0 -20px",
+      boxShadow: "3px 3px 0px 0px #8978FF",
+    },
   },
 });
 

@@ -9,7 +9,7 @@ import Palikkala from "views/Palikkala";
 import CarService from "views/CarService";
 import { Grid } from "@material-ui/core";
 import { createUseStyles } from "react-jss";
-import Background from "img/back.jpg";
+// import Background from "img/back.jpg";
 import React from "react";
 
 export enum Routes {
@@ -24,9 +24,6 @@ export enum Routes {
 const useStyles = createUseStyles({
   container: {
     minHeight: "calc(100vh - 70px)",
-    backgroundImage: `url(${Background})`,
-    backgroundSize: "cover",
-    backgroundAttachment: "fixed",
   },
 });
 
